@@ -1,29 +1,6 @@
 - name: Remove all objects from Ansible Tower
   hosts: instance-9
-  vars:
-    workflow_job_templates_secure_logging: false
-    controller_validate_certs: false
-    controller_hostname: instance-9
-    controller_username: "{{ lookup('env', 'admin_name') }}"
-    controller_password: "{{ lookup('env', 'admin_password') }}"
-  collections:
-    - awx.awx
-    - redhat_cop.controller_configuration
+  gather_facts: no
   tasks:
-    - name: Get all objects from Ansible Tower
-      tower_configuration:
-        action: 'get_all_objects'
-        host: "{{ tower_host }}"
-        username: "{{ tower_username }}"
-        password: "{{ tower_password }}"
-      register: all_objects
-
     - name: Delete all objects from Ansible Tower
-      tower_configuration:
-        action: 'delete_object'
-        host: "{{ tower_host }}"
-        username: "{{ tower_username }}"
-        password: "{{ tower_password }}"
-        object_type: "{{ item.type }}"
-        object_id: "{{ item.id }}"
-      loop: "{{ all_objects.objects }}"
+      shell: echo YES | tower-cli empty --all -v -u "{{ lookup('env', 'admin_name') }}" -p "{{ lookup('env', 'admin_password') }}" -h "http://localhost" --insecure

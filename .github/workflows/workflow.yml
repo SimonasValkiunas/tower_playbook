@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build app
+      - name: Remove objects from Ansible Automation Platform
+        run: |
+          ansible-playbook remove.yml
+      - name: Build Ansible Automation Platform conf state
         run: |
           ansible-playbook main.yml
