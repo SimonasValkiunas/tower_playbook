@@ -1,0 +1,14 @@
+- name: Playbook to configure ansible controller post installation
+  hosts: localhost
+  connection: local
+  vars:
+    validate_certs: 'no'
+    controller_host: towerapp.sebank.se
+    controller_username: test_tower
+    controller_password: test_tower   
+  collections:
+    - awx.awx
+  
+  roles:
+  - {role: export_projects, tags: export_projects}
+
