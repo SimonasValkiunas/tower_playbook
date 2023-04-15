@@ -1,0 +1,11 @@
+name: My Workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ansible-1
+    steps:
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
+      - name: Build app
+        run: |
+          ansible all -i hosts -m ping
