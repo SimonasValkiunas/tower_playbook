@@ -3,5 +3,3 @@ controller_organizations:
   description: Organization used in TaaC demo
 - name: Test Organization 2
   description: Organization used in TaaC demo
-- name: Test Organization 3
-  description: Organization used in TaaC demo
