@@ -1,9 +1,7 @@
 controller_organizations:
-- name: Test Organization
+- name: Test Organization 1
   description: Organization used in TaaC demo
-
-controller_inventories:
-- name: Test inventory
-  organization: Test Organization
-  description: Inventory for testing tower/git integration
-
+- name: Test Organization 2
+  description: Organization used in TaaC demo
+- name: Test Organization 3
+  description: Organization used in TaaC demo
