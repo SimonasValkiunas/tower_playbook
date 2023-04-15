@@ -1,5 +1,9 @@
 controller_organizations:
 - name: Test Organization 1
-  description: Organization used in TaaC demo
+  description: Organization used in CaaC demo
 - name: Test Organization 2
-  description: Organization used in TaaC demo
+  description: Organization used in CaaC demo
+- name: Test Organization 3
+  description: Organization used in CaaC demo
+
+
